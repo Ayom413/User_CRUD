@@ -73,10 +73,7 @@ REST API позволяет взаимодействовать с системо
 - **Описание:** Создает нового пользователя.
 - **Пример запроса (Bash):**
 ```bash
-curl -X POST http://your_domain/api-user -H "Content-Type: application/json" -d '{
-    "username": "newuser",
-    "password": "newpassword"
-}
+curl -X POST http://your_domain/api-user -H "Content-Type: application/json" -d "{\"username\": \"newuser\", \"password\": \"newpassword\"}"
 ```
   ### 4. Обновить информацию о пользователе по ID (Update)
 
@@ -85,10 +82,7 @@ curl -X POST http://your_domain/api-user -H "Content-Type: application/json" -d 
 - **Описание:** Обновляет информацию о пользователе по его ID.
 - **Пример запроса (Bash):**
 ```bash
-curl -X PUT http://your_domain/api-user/5 -H "Content-Type: application/json" -d '{
-    "username": "updateduser",
-    "password": "updatedpassword"
-}'
+curl -X PUT http://your_domain/api-user/1 -H "Content-Type: application/json" -d "{\"username\": \"updateduser\", \"password\": \"updatedpassword\"}"
 ```
 ### 5. Удалить пользователя по ID (Delete)
 
