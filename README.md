@@ -12,12 +12,12 @@
 - Выполнять вход в систему под учетной записью пользователя
 
 Для доступа к веб-интерфейсу используйте следующие URL-адреса:
-- **Список пользователей:** `http://crud.local/user`
-- **Создание пользователя:** `http://crud.local/user/create`
-- **Обновление пользователя:** `http://crud.local/user/update/<id>`
-- **Удаление пользователя:** `http://crud.local/user/delete/<id>`
-- **Вход в систему:** `http://crud.local/user/login`
-
+- **Список пользователей:** `http://your_domain/user`
+- **Создание пользователя:** `http://your_domain/user/create`
+- **Обновление пользователя:** `http://your_domain/user/update/<id>`
+- **Удаление пользователя:** `http://your_domain/user/delete/<id>`
+- **Вход в систему:** `http://your_domain/user/login`
+Где your_domain - доменное имя вашего сервера.
 ## Начальная настройка проекта
 
 ### 1. Клонирование репозитория
@@ -26,8 +26,7 @@
 
 ```bash
 git clone https://github.com/ВашеИмяПользователя/User_CRUD.git
-cd User_CRUD
-
+```
 ### 2. Настройка базы данных
 Откройте файл config/db.php и настройте параметры подключения к вашей базе данных:
 ```php
@@ -38,11 +37,12 @@ return [
     'password' => 'your_db_password',
     'charset' => 'utf8',
 ];
+```
 ### 3. Проведение миграций
 После подключения бд к проекту проведите миграции, для создания необходимых таблиц
 ```bash
 php yii migrate
-
+```
 
 ## REST API
 
@@ -56,41 +56,46 @@ REST API позволяет взаимодействовать с системо
 - **Пример запроса (Bash):**
   ```bash
   curl -X GET http://your_domain/api-user
-
+```
   ### 2. Получить информацию о пользователе по ID (Read by ID)
 
 - **URL:** `/api-user/<id>`
 - **Метод:** `GET`
 - **Описание:** Возвращает информацию о конкретном пользователе по его ID.
 - **Пример запроса (Bash):**
+ ```bash
   curl -X GET http://your_domain/api-user/1
-
+ ```
   ### 3. Создать нового пользователя (Create)
 
 - **URL:** `/api-user`
 - **Метод:** `POST`
 - **Описание:** Создает нового пользователя.
 - **Пример запроса (Bash):**
+```bash
 curl -X POST http://your_domain/api-user -H "Content-Type: application/json" -d '{
     "username": "newuser",
     "password": "newpassword"
 }
-
+```
   ### 4. Обновить информацию о пользователе по ID (Update)
 
 - **URL:** `/api-user/<id>`
 - **Метод:** `PUT`
 - **Описание:** Обновляет информацию о пользователе по его ID.
 - **Пример запроса (Bash):**
+```bash
 curl -X PUT http://your_domain/api-user/5 -H "Content-Type: application/json" -d '{
     "username": "updateduser",
     "password": "updatedpassword"
 }'
-
+```
 ### 5. Удалить пользователя по ID (Delete)
 
 - **URL:** `/api-user/<id>`
 - **Метод:** `DELETE`
 - **Описание:** Удаляет пользователя по его ID.
 - **Пример запроса (Bash):**
+```bash
 curl -X DELETE http://your_domain/api-user/5
+```
