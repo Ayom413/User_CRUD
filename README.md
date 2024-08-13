@@ -93,3 +93,13 @@ curl -X PUT http://your_domain/api-user/1 -H "Content-Type: application/json" -d
 ```bash
 curl -X DELETE http://your_domain/api-user/5
 ```
+### 6. Логин пользователя (Login)
+
+- **URL:** `/api-user/login`
+- **Метод:** `POST`
+- **Описание:** Выполняет аутентификацию пользователя по его имени и паролю.
+- **Пример запроса (Bash):**
+```bash
+curl -X POST http://your_domain/api-user/login -H "Content-Type: application/json" -d "{\"username\": \"your_username\", \"password\": \"your_password\"}"
+```
+
